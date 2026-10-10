@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header'
 import Faq from '@/components/sections/Faq'
 import Hero from '@/components/sections/Hero'
 import HowItWorks from '@/components/sections/HowItWorks'
+import Installation from '@/components/sections/Installation'
 import KitFinder from '@/components/sections/KitFinder'
 import ProblemSolution from '@/components/sections/ProblemSolution'
 import ProductCatalog from '@/components/sections/ProductCatalog'
@@ -22,6 +23,7 @@ export default function Home() {
         <HowItWorks />
         <ProductCatalog />
         <KitFinder />
+        <Installation />
         <Faq />
       </Box>
       <Footer />

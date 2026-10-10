@@ -44,11 +44,23 @@ lib/
 docs/BRANDBOOK.md    manual de marca (fuente de verdad visual y de tono)
 ```
 
+## Dominio y SEO
+
+La URL canónica (canonical, sitemap, robots, Open Graph y JSON-LD) se resuelve en `next.config.mjs`:
+
+1. `NEXT_PUBLIC_SITE_URL`, si se define (por ejemplo `https://puritinaco.com`, sin www).
+2. En Vercel, el dominio de producción del proyecto (`VERCEL_PROJECT_PRODUCTION_URL`), sea dominio propio o `*.vercel.app`.
+3. `https://puritinaco.com` como valor local.
+
+Íconos: `app/favicon.ico` (16/32/48 px), `app/icon.svg`, `app/apple-icon.png` y los PNG del manifest en `public/` se rasterizan desde `app/icon.svg`; si cambia el isotipo hay que regenerarlos.
+
+Para aparecer en Google: dar de alta el dominio en [Search Console](https://search.google.com/search-console), enviar `/sitemap.xml` y pedir la indexación de la página principal.
+
 ## Pendiente antes de publicar
 
 Los valores marcados con `TODO` en el código son provisionales:
 
-- **`lib/site.ts`**: dominio definitivo (sin www), número de WhatsApp y correo.
+- **`lib/site.ts`**: número de WhatsApp y correo.
 - **`lib/products.ts`**: precios reales y calificaciones. Las reseñas actuales son de ejemplo y no se publican en el JSON-LD.
 - **`components/layout/Footer.tsx`**: métodos de pago que acepte la pasarela elegida.
 - **Imágenes de producto**: las tarjetas usan ilustraciones SVG; conviene reemplazarlas por fotos reales del producto.

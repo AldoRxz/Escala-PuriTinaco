@@ -15,5 +15,6 @@ Landing + e-commerce de filtros de sedimentos para tinacos y cisternas (México)
 - MUI v9 eliminó los *system props* (`<Box mt={2}>`, `<Typography fontWeight=...>`): todo va en `sx`. Las props deprecadas (`PaperProps`, `inputProps`, `TransitionProps`...) se reemplazan por `slotProps`.
 - Las secciones son Server Components; solo lo interactivo lleva `'use client'`. En Server Components el `sx` debe ser serializable (sin funciones ni `keyframes` de Emotion; las animaciones globales viven en `MuiCssBaseline`).
 - Copy en español de México, tuteando. Sin "agua potable", sin "100% libre de sedimentos" y cuidado con prometer que se quita el sarro (ver *Claims responsables* en el brandbook).
-- Dominio canónico sin www (`lib/site.ts`).
+- Dominio canónico sin www: se resuelve en `next.config.mjs` (`NEXT_PUBLIC_SITE_URL` o dominio de producción de Vercel) y se lee como `site.url`.
+- La instalación a domicilio solo se ofrece en Guadalajara (`site.installCity`); fuera de ahí, envío + guía por WhatsApp.
 - Antes de commitear: `pnpm lint`, `pnpm typecheck` y `pnpm build`.

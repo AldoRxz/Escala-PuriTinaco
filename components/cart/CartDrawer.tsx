@@ -1,9 +1,12 @@
 'use client'
 
+import { useState } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
+import Checkbox from '@mui/material/Checkbox'
 import Divider from '@mui/material/Divider'
 import Drawer from '@mui/material/Drawer'
+import FormControlLabel from '@mui/material/FormControlLabel'
 import IconButton from '@mui/material/IconButton'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
@@ -16,7 +19,7 @@ import WhatsApp from '@mui/icons-material/WhatsApp'
 import ProductIllustration from '@/components/illustrations/ProductIllustration'
 import { MAX_QTY } from '@/lib/cartStore'
 import { formatMXN } from '@/lib/products'
-import { whatsappUrl } from '@/lib/site'
+import { site, whatsappUrl } from '@/lib/site'
 import { useCart, type CartItem } from './CartProvider'
 
 function modeLabel(item: CartItem) {
@@ -24,7 +27,7 @@ function modeLabel(item: CartItem) {
   return item.product.subscription ? 'Compra única' : null
 }
 
-function orderMessage(items: CartItem[], subtotal: number) {
+function orderMessage(items: CartItem[], subtotal: number, withInstall: boolean) {
   const lines = items.map((item) => {
     const mode = modeLabel(item)
     return `- ${item.qty} x ${item.product.name}${mode ? ` (${mode})` : ''}: ${formatMXN(item.total)}`
@@ -36,12 +39,14 @@ function orderMessage(items: CartItem[], subtotal: number) {
     '',
     `Subtotal: ${formatMXN(subtotal)} MXN`,
     '',
+    ...(withInstall ? [`También quiero que me lo instalen en ${site.installCity.name}.`, ''] : []),
     '¿Me confirman el envío y la forma de pago? Mi código postal es: ',
   ].join('\n')
 }
 
 export default function CartDrawer() {
   const { items, count, subtotal, setQty, remove, isOpen, closeCart } = useCart()
+  const [withInstall, setWithInstall] = useState(false)
 
   return (
     <Drawer
@@ -165,8 +170,22 @@ export default function CartDrawer() {
             <Typography variant="body2" sx={{ mt: 0.5, color: 'text.secondary' }}>
               El envío se calcula con tu código postal al confirmar el pedido.
             </Typography>
+            <FormControlLabel
+              control={<Checkbox checked={withInstall} onChange={(e) => setWithInstall(e.target.checked)} />}
+              label={
+                <Box>
+                  <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                    Quiero instalación en {site.installCity.name}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    Te la cotizamos por WhatsApp.
+                  </Typography>
+                </Box>
+              }
+              sx={{ mt: 1.5, ml: -1, alignItems: 'flex-start', '& .MuiCheckbox-root': { mt: -0.75 } }}
+            />
             <Button
-              href={whatsappUrl(orderMessage(items, subtotal))}
+              href={whatsappUrl(orderMessage(items, subtotal, withInstall))}
               target="_blank"
               rel="noopener noreferrer"
               variant="contained"

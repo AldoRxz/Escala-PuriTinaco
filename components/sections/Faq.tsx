@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography'
 import ExpandMoreRounded from '@mui/icons-material/ExpandMoreRounded'
 import WhatsApp from '@mui/icons-material/WhatsApp'
 import Section, { SectionHeader } from '@/components/ui/Section'
-import { whatsappUrl } from '@/lib/site'
+import { site, whatsappUrl } from '@/lib/site'
 
 const faqs: { q: string; a: React.ReactNode }[] = [
   {
@@ -39,7 +39,18 @@ const faqs: { q: string; a: React.ReactNode }[] = [
       <>
         Es una instalación sencilla: se corta la tubería de subida, se colocan las conexiones con cinta teflón y se fija la
         carcasa con su soporte. Un plomero suele terminar en menos de una hora. Si tienes experiencia con herramienta básica
-        puedes hacerlo tú, y por WhatsApp te guiamos paso a paso.
+        puedes hacerlo tú, y por WhatsApp te guiamos paso a paso. En {site.installCity.name},{' '}
+        <Link href="#instalacion">nosotros lo instalamos</Link>.
+      </>
+    ),
+  },
+  {
+    q: `¿Hacen la instalación en ${site.installCity.name}?`,
+    a: (
+      <>
+        Sí. En {site.installCity.name} vamos a tu domicilio, conectamos el filtro en tu tubería de subida y te explicamos el
+        mantenimiento. Agenda por WhatsApp y te cotizamos según tu instalación. En el resto del país te lo enviamos y te
+        guiamos para que lo instale tu plomero.
       </>
     ),
   },
@@ -65,7 +76,7 @@ const faqs: { q: string; a: React.ReactNode }[] = [
 
 export default function Faq() {
   return (
-    <Section id="faq">
+    <Section id="faq" tone="paper">
       <Grid container spacing={{ xs: 4, md: 8 }}>
         <Grid size={{ xs: 12, md: 4 }}>
           <Box sx={{ position: { md: 'sticky' }, top: { md: 104 } }}>
@@ -91,7 +102,7 @@ export default function Faq() {
         </Grid>
         <Grid size={{ xs: 12, md: 8 }}>
           {faqs.map((item, i) => (
-            <Accordion key={item.q} defaultExpanded={i === 0} sx={{ bgcolor: 'background.paper' }}>
+            <Accordion key={item.q} defaultExpanded={i === 0}>
               <AccordionSummary
                 expandIcon={<ExpandMoreRounded />}
                 aria-controls={`faq-${i}-contenido`}

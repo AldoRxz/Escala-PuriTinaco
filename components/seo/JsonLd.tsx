@@ -12,10 +12,25 @@ export default function JsonLd() {
         '@id': `${site.url}/#organizacion`,
         name: site.name,
         url: `${site.url}/`,
-        logo: `${site.url}/icon.svg`,
+        // PNG cuadrado de 512 px: Google pide un logo rastreable de al menos 112 x 112 px.
+        logo: `${site.url}/icon-512.png`,
+        image: `${site.url}/opengraph-image.png`,
         slogan: site.slogan,
         email: site.email,
-        areaServed: 'MX',
+        areaServed: { '@type': 'Country', name: 'México' },
+      },
+      {
+        '@type': 'Service',
+        '@id': `${site.url}/#instalacion`,
+        name: `Instalación de filtro para tinaco en ${site.installCity.name}`,
+        serviceType: 'Instalación de filtro de sedimentos para tinaco y cisterna',
+        provider: { '@id': `${site.url}/#organizacion` },
+        areaServed: {
+          '@type': 'City',
+          name: site.installCity.name,
+          containedInPlace: { '@type': 'State', name: site.installCity.region },
+        },
+        url: `${site.url}/#instalacion`,
       },
       {
         '@type': 'WebSite',

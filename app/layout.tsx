@@ -3,7 +3,7 @@ import { Google_Sans, Roboto } from 'next/font/google'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter'
 import Providers from '@/components/Providers'
 import { colors } from '@/lib/tokens'
-import { site } from '@/lib/site'
+import { keywords, site } from '@/lib/site'
 
 const googleSans = Google_Sans({
   subsets: ['latin'],
@@ -23,10 +23,11 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Filtro de sedimentos para tinaco y cisterna`,
+    default: `${site.name} | Filtro para tinaco y cisterna`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  keywords,
   applicationName: site.name,
   alternates: { canonical: '/' },
   openGraph: {
