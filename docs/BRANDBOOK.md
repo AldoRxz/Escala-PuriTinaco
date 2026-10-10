@@ -126,7 +126,7 @@ Solo dentro de ilustraciones (nunca en UI): sedimento `#A47551`, sedimento claro
 
 | Rol | Familia | Peso | Notas |
 |---|---|---|---|
-| **Headlines / títulos** | Google Sans → alternativa web: **Plus Jakarta Sans** (o Inter) | 600 Semi-Bold (h1/h2 a 700) | `letter-spacing: -0.02em` en h1/h2. |
+| **Headlines / títulos** | **Google Sans** (alternativas: Plus Jakarta Sans, Inter) | 600 Semi-Bold (h1/h2 a 700) | `letter-spacing: -0.02em` en h1/h2. |
 | **Body / lectura** | **Roboto** | 400 Regular | Interlineado 1.6 en párrafos. |
 | **Etiquetas, botones, formularios** | **Roboto** | 500 Medium (botones 600) | Sin mayúsculas sostenidas (`textTransform: none`). |
 
@@ -136,7 +136,7 @@ Stack CSS: `"Google Sans", "Plus Jakarta Sans", "Inter", "Roboto", "Helvetica", 
 
 | Estilo | Móvil | Escritorio | Uso |
 |---|---|---|---|
-| h1 | 2.25rem | 3.5rem | Titular del hero (uno por página). |
+| h1 | 2.25rem | 3.25rem | Titular del hero (uno por página, máximo 2-3 líneas). |
 | h2 | 1.875rem | 2.5rem | Título de sección. |
 | h3 | 1.5rem | 1.75rem | Subtítulo, tarjetas destacadas. |
 | h4–h6 | 1.25–1rem | 1.375–1.125rem | Títulos de tarjeta, etiquetas. |
@@ -185,6 +185,6 @@ Máximo ~65 caracteres por línea en párrafos.
 ## 7. Implementación técnica
 
 - Tema MUI: `lib/theme.ts` (paleta, tipografía, forma y overrides de componentes de este documento).
-- Fuentes: `next/font/google` (Plus Jakarta Sans + Roboto) en `app/layout.tsx`.
+- Fuentes: `next/font/google` (Google Sans + Roboto) en `app/layout.tsx`, autoalojadas en el build.
 - Logo: `components/brand/Logo.tsx`.
 - Cualquier color, sombra o radio nuevo se agrega primero aquí y en `lib/theme.ts`; no se escriben valores sueltos en componentes.
