@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
+import Faq from '@/components/sections/Faq'
 import Hero from '@/components/sections/Hero'
 import HowItWorks from '@/components/sections/HowItWorks'
 import KitFinder from '@/components/sections/KitFinder'
@@ -19,6 +20,7 @@ export default function Home() {
         <HowItWorks />
         <ProductCatalog />
         <KitFinder />
+        <Faq />
       </Box>
       <Footer />
     </>
