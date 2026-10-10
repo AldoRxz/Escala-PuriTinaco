@@ -9,7 +9,8 @@ import PlaceRounded from '@mui/icons-material/PlaceRounded'
 import SchoolRounded from '@mui/icons-material/SchoolRounded'
 import WhatsApp from '@mui/icons-material/WhatsApp'
 import Section from '@/components/ui/Section'
-import { site, whatsappUrl } from '@/lib/site'
+import { site } from '@/lib/site'
+import { whatsappLink } from '@/lib/whatsapp'
 import { colors } from '@/lib/tokens'
 
 const city = site.installCity.name
@@ -46,7 +47,7 @@ export default function Installation() {
               Si estás en {city}, nosotros lo instalamos. Agenda por WhatsApp y te cotizamos según tu tubería.
             </Typography>
             <Button
-              href={whatsappUrl(`Hola, quiero agendar la instalación de mi filtro PuriTinaco en ${city}. Mi colonia es: `)}
+              href={whatsappLink('instalacion')}
               target="_blank"
               rel="noopener noreferrer"
               variant="contained"

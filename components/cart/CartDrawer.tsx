@@ -19,7 +19,8 @@ import WhatsApp from '@mui/icons-material/WhatsApp'
 import ProductIllustration from '@/components/illustrations/ProductIllustration'
 import { MAX_QTY } from '@/lib/cartStore'
 import { formatMXN } from '@/lib/products'
-import { site, whatsappUrl } from '@/lib/site'
+import { site } from '@/lib/site'
+import { webIntro, whatsappUrl } from '@/lib/whatsapp'
 import { useCart, type CartItem } from './CartProvider'
 
 function modeLabel(item: CartItem) {
@@ -33,7 +34,7 @@ function orderMessage(items: CartItem[], subtotal: number, withInstall: boolean)
     return `- ${item.qty} x ${item.product.name}${mode ? ` (${mode})` : ''}: ${formatMXN(item.total)}`
   })
   return [
-    'Hola, quiero hacer este pedido en PuriTinaco:',
+    `${webIntro('pedido')} Quiero hacer este pedido:`,
     '',
     ...lines,
     '',

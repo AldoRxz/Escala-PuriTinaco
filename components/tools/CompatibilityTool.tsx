@@ -10,6 +10,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import Typography from '@mui/material/Typography'
 import PlumbingRounded from '@mui/icons-material/PlumbingRounded'
 import { pipeRecommendations, pipeSizes, type PipeSize } from '@/lib/recommend'
+import { whatsappLink } from '@/lib/whatsapp'
 import RecommendedProduct from './RecommendedProduct'
 
 export default function CompatibilityTool() {
@@ -70,7 +71,10 @@ export default function CompatibilityTool() {
             <PlumbingRounded sx={{ color: 'primary.main' }} />
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
               Elige una medida para ver qué kit te queda. ¿No la sabes? Viene impresa en el tubo, o{' '}
-              <Link href="#contacto">mándanos una foto</Link>.
+              <Link href={whatsappLink('tuberia')} target="_blank" rel="noopener noreferrer">
+                mándanos una foto por WhatsApp
+              </Link>
+              .
             </Typography>
           </Stack>
         )}

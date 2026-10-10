@@ -11,8 +11,10 @@ export const site = {
   locale: 'es_MX',
   email: 'hola@puritinaco.com', // TODO: correo real.
   whatsapp: {
-    number: '5215500000000', // TODO: número real en formato internacional, sin "+" ni espacios.
-    display: '55 0000 0000', // TODO
+    // Formato internacional para wa.me: 52 + 10 dígitos, sin "+" ni espacios.
+    number: '523311474711',
+    display: '33 1147 4711',
+    tel: '+52 33 1147 4711',
   },
   hours: 'Lunes a sábado, 9:00 a 19:00 h',
   // Ciudad donde también ofrecemos instalación a domicilio.
@@ -44,8 +46,3 @@ export const nav = [
   { label: 'Instalación', href: '#instalacion' },
   { label: 'Contacto', href: '#contacto' },
 ] as const
-
-export function whatsappUrl(message?: string) {
-  const base = `https://wa.me/${site.whatsapp.number}`
-  return message ? `${base}?text=${encodeURIComponent(message)}` : base
-}

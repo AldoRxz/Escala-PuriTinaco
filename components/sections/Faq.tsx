@@ -9,7 +9,8 @@ import Typography from '@mui/material/Typography'
 import ExpandMoreRounded from '@mui/icons-material/ExpandMoreRounded'
 import WhatsApp from '@mui/icons-material/WhatsApp'
 import Section, { SectionHeader } from '@/components/ui/Section'
-import { site, whatsappUrl } from '@/lib/site'
+import { site } from '@/lib/site'
+import { whatsappLink } from '@/lib/whatsapp'
 
 const faqs: { q: string; a: React.ReactNode }[] = [
   {
@@ -88,7 +89,7 @@ export default function Faq() {
             <Box sx={{ mt: { xs: -2, md: -3 } }}>
               <Typography sx={{ fontWeight: 500 }}>¿Tienes otra duda?</Typography>
               <Button
-                href={whatsappUrl('Hola, tengo una duda sobre los filtros PuriTinaco.')}
+                href={whatsappLink('duda')}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="outlined"

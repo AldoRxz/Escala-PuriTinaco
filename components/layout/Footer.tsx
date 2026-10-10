@@ -10,7 +10,8 @@ import MailOutlineRounded from '@mui/icons-material/MailOutlineRounded'
 import WhatsApp from '@mui/icons-material/WhatsApp'
 import { siAmericanexpress, siMastercard, siMercadopago, siPaypal, siVisa, type SimpleIcon } from 'simple-icons'
 import Logo from '@/components/brand/Logo'
-import { nav, site, whatsappUrl } from '@/lib/site'
+import { nav, site } from '@/lib/site'
+import { whatsappLink } from '@/lib/whatsapp'
 
 // TODO: confirmar los métodos de pago que acepta la pasarela elegida.
 const paymentMethods: SimpleIcon[] = [siVisa, siMastercard, siAmericanexpress, siMercadopago, siPaypal]
@@ -59,7 +60,7 @@ export default function Footer() {
               Mándanos una foto de tu tubería de subida y te decimos qué kit necesitas y cómo instalarlo.
             </Typography>
             <Button
-              href={whatsappUrl('Hola, quiero ayuda para elegir mi filtro PuriTinaco.')}
+              href={whatsappLink('asesoria')}
               target="_blank"
               rel="noopener noreferrer"
               variant="contained"
@@ -89,7 +90,7 @@ export default function Footer() {
             >
               <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
                 <WhatsApp sx={{ color: 'accent.main' }} />
-                <Link href={whatsappUrl()} target="_blank" rel="noopener noreferrer" sx={linkSx}>
+                <Link href={whatsappLink('contacto')} target="_blank" rel="noopener noreferrer" sx={linkSx}>
                   WhatsApp {site.whatsapp.display}
                 </Link>
               </Stack>

@@ -56,11 +56,26 @@ La URL canónica (canonical, sitemap, robots, Open Graph y JSON-LD) se resuelve 
 
 Para aparecer en Google: dar de alta el dominio en [Search Console](https://search.google.com/search-console), enviar `/sitemap.xml` y pedir la indexación de la página principal.
 
+## Mensajes de WhatsApp
+
+Todos los botones abren WhatsApp (33 1147 4711) con un mensaje predefinido que empieza con *"Hola PuriTinaco, les escribo desde su página web (ref. …)"*. La referencia indica desde qué botón escribió el cliente:
+
+| Referencia | Botón | El cliente completa |
+|---|---|---|
+| `WEB-PEDIDO` | Finalizar pedido (carrito); incluye productos, subtotal y si pidió instalación | Código postal |
+| `WEB-INSTALACION` | Agenda tu instalación | Colonia |
+| `WEB-ASESORIA` | Escríbenos por WhatsApp (footer) | |
+| `WEB-DUDA` | ¿Tienes otra duda? (preguntas frecuentes) | Su duda |
+| `WEB-TUBERIA` | Mándanos una foto (compatibilidad) | Foto de su tubería |
+| `WEB-CONTACTO` | Número de WhatsApp en el footer | |
+
+Los textos y referencias viven en `lib/whatsapp.ts`.
+
 ## Pendiente antes de publicar
 
 Los valores marcados con `TODO` en el código son provisionales:
 
-- **`lib/site.ts`**: número de WhatsApp y correo.
+- **`lib/site.ts`**: correo de contacto.
 - **`lib/products.ts`**: precios reales y calificaciones. Las reseñas actuales son de ejemplo y no se publican en el JSON-LD.
 - **`components/layout/Footer.tsx`**: métodos de pago que acepte la pasarela elegida.
 - **Imágenes de producto**: las tarjetas usan ilustraciones SVG; conviene reemplazarlas por fotos reales del producto.

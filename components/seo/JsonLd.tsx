@@ -17,6 +17,14 @@ export default function JsonLd() {
         image: `${site.url}/opengraph-image.png`,
         slogan: site.slogan,
         email: site.email,
+        telephone: site.whatsapp.tel,
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'customer service',
+          telephone: site.whatsapp.tel,
+          areaServed: 'MX',
+          availableLanguage: 'es',
+        },
         areaServed: { '@type': 'Country', name: 'México' },
       },
       {
