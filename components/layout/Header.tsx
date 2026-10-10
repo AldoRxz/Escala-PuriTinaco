@@ -16,6 +16,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger'
 import CloseRounded from '@mui/icons-material/CloseRounded'
 import MenuRounded from '@mui/icons-material/MenuRounded'
 import Logo from '@/components/brand/Logo'
+import CartButton from '@/components/cart/CartButton'
 import { nav } from '@/lib/site'
 import { headerHeight } from '@/lib/tokens'
 
@@ -68,6 +69,8 @@ export default function Header() {
           >
             Comprar filtro
           </Button>
+
+          <CartButton />
 
           <IconButton
             aria-label="Abrir menú"
