@@ -66,7 +66,7 @@ Logotipo **wordmark + isotipo**:
 | Versión | Uso |
 |---|---|
 | Color sobre fondo claro | Header, documentos, empaques. |
-| Blanco sobre Deep Hydro | Footer, fondos oscuros, redes sociales. |
+| Inversa sobre Deep Hydro (`Puri` blanco + `Tinaco` Fresh Cyan, gota blanca) | Footer, fondos oscuros, redes sociales. |
 | Isotipo solo | Favicon, avatar de redes, sellos. |
 
 **Área de protección:** dejar alrededor del logo un espacio libre equivalente a la altura de la gota.
