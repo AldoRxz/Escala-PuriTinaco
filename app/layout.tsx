@@ -27,6 +27,22 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  applicationName: site.name,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    locale: site.locale,
+    url: '/',
+    siteName: site.name,
+    title: `${site.name} | Agua limpia antes de que entre a tu hogar`,
+    description: site.description,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${site.name} | Agua limpia antes de que entre a tu hogar`,
+    description: site.description,
+  },
+  formatDetection: { telephone: false },
 }
 
 export const viewport: Viewport = {

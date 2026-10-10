@@ -8,10 +8,12 @@ import KitFinder from '@/components/sections/KitFinder'
 import ProblemSolution from '@/components/sections/ProblemSolution'
 import ProductCatalog from '@/components/sections/ProductCatalog'
 import TrustBar from '@/components/sections/TrustBar'
+import JsonLd from '@/components/seo/JsonLd'
 
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <Header />
       <Box component="main" id="inicio">
         <Hero />
