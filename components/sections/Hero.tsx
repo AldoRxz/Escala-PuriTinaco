@@ -21,7 +21,7 @@ export default function Hero() {
     >
       <Container maxWidth="lg" sx={{ pt: { xs: 5, md: 8 }, pb: { xs: 6, md: 8 } }}>
         <Grid container spacing={{ xs: 5, md: 6 }} sx={{ alignItems: 'center' }}>
-          <Grid size={{ xs: 12, md: 6 }} className="pt-rise">
+          <Grid size={{ xs: 12, md: 6 }}>
             <Typography variant="overline" component="p" sx={{ color: 'primary.main' }}>
               Filtro de entrada para tinaco y cisterna
             </Typography>

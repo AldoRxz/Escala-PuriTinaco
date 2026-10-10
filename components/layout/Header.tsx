@@ -35,6 +35,26 @@ export default function Header() {
         transition: 'border-color 200ms ease-out',
       }}
     >
+      <Box
+        component="a"
+        href="#inicio"
+        sx={{
+          position: 'absolute',
+          left: 16,
+          top: -48,
+          zIndex: 1,
+          px: 2,
+          py: 1,
+          borderRadius: 1,
+          bgcolor: 'secondary.main',
+          color: '#FFFFFF',
+          fontWeight: 500,
+          textDecoration: 'none',
+          '&:focus': { top: 12 },
+        }}
+      >
+        Saltar al contenido
+      </Box>
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ minHeight: { xs: headerHeight.xs, md: headerHeight.md }, gap: 2 }}>
           <Box

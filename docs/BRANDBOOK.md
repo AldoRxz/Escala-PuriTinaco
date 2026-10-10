@@ -112,6 +112,7 @@ Inspirada en el agua limpia, la pureza sanitaria y la sobriedad técnica de Goog
 | Aqua Primary sobre blanco | ~4.7 : 1 | Texto normal, botones, enlaces. ✅ |
 | Blanco sobre Deep Hydro | ~11 : 1 | Footer, badges. ✅ |
 | `#64748B` sobre blanco | ~4.8 : 1 | Texto secundario. ✅ |
+| `#64748B` sobre `accent.light` | ~4.3 : 1 | ❌ Sobre fondos tintados usar `#475569` (~7 : 1). |
 | Fresh Cyan sobre blanco | ~2.5 : 1 | ❌ Nunca para texto. Solo íconos decorativos, ilustración, bordes de hover. |
 | Clean Aqua Mint sobre blanco | ~2.5 : 1 | ❌ Nunca para texto. Para texto de éxito usar `success.dark` `#047857`. |
 | Fresh Cyan sobre Deep Hydro | ~4.5 : 1 | Íconos y texto grande en el footer. |

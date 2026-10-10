@@ -6,7 +6,7 @@ import { colors } from '@/lib/tokens'
 import { site } from '@/lib/site'
 
 const googleSans = Google_Sans({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   display: 'swap',
   variable: '--font-google-sans',
   // Next no tiene métricas de Google Sans para generar la fuente de respaldo ajustada.
@@ -15,7 +15,7 @@ const googleSans = Google_Sans({
 })
 
 const roboto = Roboto({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   display: 'swap',
   variable: '--font-roboto',
 })

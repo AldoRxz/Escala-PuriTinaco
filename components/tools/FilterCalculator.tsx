@@ -10,6 +10,7 @@ import Slider from '@mui/material/Slider'
 import Stack from '@mui/material/Stack'
 import Switch from '@mui/material/Switch'
 import Typography from '@mui/material/Typography'
+import { colors } from '@/lib/tokens'
 import { calculate, formatWeeks, LITERS_PER_PERSON, waterSources, type WaterSource } from '@/lib/recommend'
 import RecommendedProduct from './RecommendedProduct'
 
@@ -97,7 +98,7 @@ export default function FilterCalculator() {
                     <Typography variant="body2" sx={{ fontWeight: 600 }}>
                       {option.label}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.8125rem' }}>
+                    <Typography variant="body2" sx={{ color: colors.slateMutedOnTint, fontSize: '0.8125rem' }}>
                       {option.detail}
                     </Typography>
                   </Box>
@@ -135,7 +136,7 @@ export default function FilterCalculator() {
             value={`${result.cartridgesPerYear} ${result.cartridgesPerYear === 1 ? 'cartucho' : 'cartuchos'}`}
           />
         </Box>
-        <Typography variant="body2" sx={{ mt: 1.5, color: 'text.secondary' }}>
+        <Typography variant="body2" sx={{ mt: 1.5, color: colors.slateMutedOnTint }}>
           {result.note} Estimación con {LITERS_PER_PERSON} L por persona al día; si el tinaco tarda más en llenarse, toca darle
           mantenimiento antes.
         </Typography>

@@ -14,6 +14,8 @@ export const colors = {
   paper: '#FFFFFF',
   slateCharcoal: '#1E293B',
   slateMuted: '#64748B',
+  // Texto secundario sobre fondos tintados (accent.light): #64748B no llega a 4.5:1 ahí.
+  slateMutedOnTint: '#475569',
   border: '#E2E8F0',
   mint: '#10B981',
   mintLight: '#D1FAE5',

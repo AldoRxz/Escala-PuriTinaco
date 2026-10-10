@@ -162,7 +162,7 @@ export default function HowItWorks() {
                   >
                     {item.detail}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  <Typography variant="body2" sx={{ color: colors.slateMutedOnTint }}>
                     {item.label}
                   </Typography>
                 </Box>

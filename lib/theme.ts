@@ -108,21 +108,11 @@ export const theme = createTheme({
         },
         body: { WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' },
         ':focus-visible': { outline: `2px solid ${colors.aquaPrimary}`, outlineOffset: 2 },
-        // Animaciones globales: se referencian por nombre desde componentes de servidor y SVG.
+        // Flujo de agua en las ilustraciones; se referencia por clase desde componentes de servidor y SVG.
         '@keyframes pt-flow': { to: { strokeDashoffset: -28 } },
-        '@keyframes pt-rise': {
-          from: { opacity: 0, transform: 'translateY(12px)' },
-          to: { opacity: 1, transform: 'none' },
-        },
-        '@keyframes pt-bob': {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-4px)' },
-        },
         '.pt-flow': { strokeDasharray: '6 8' },
         '@media (prefers-reduced-motion: no-preference)': {
           '.pt-flow': { animation: 'pt-flow 1.1s linear infinite' },
-          '.pt-rise': { animation: 'pt-rise 600ms cubic-bezier(0.16, 1, 0.3, 1) both' },
-          '.pt-bob': { animation: 'pt-bob 4s ease-in-out infinite' },
         },
       },
     },
@@ -190,6 +180,10 @@ export const theme = createTheme({
     },
     MuiLink: {
       defaultProps: { underline: 'hover' },
+    },
+    MuiTypography: {
+      // Por defecto MUI renderiza los subtítulos como <h6>; aquí son párrafos, no encabezados.
+      defaultProps: { variantMapping: { subtitle1: 'p', subtitle2: 'p' } },
     },
     MuiTooltip: {
       styleOverrides: { tooltip: { fontSize: '0.8125rem' } },
